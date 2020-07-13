@@ -1,6 +1,20 @@
-const request = require('request-promise');
+const request = require("request-promise");
 
-// getDadJoke
+getDadJoke = async () => {
+  try {
+    const response = await request({
+      uri: "https://icanhazdadjoke.com/",
+      headers: {
+        Accept: "application/json",
+      },
+      json: true,
+    });
+    return response.joke;
+  } catch (err) {
+    console.log("Error: ", err);
+  }
+};
 
 // 4.1
-// getJoke().then((data) => console.log(data));
+getDadJoke().then((data) => console.log(data));
+module.exports = { getDadJoke };
