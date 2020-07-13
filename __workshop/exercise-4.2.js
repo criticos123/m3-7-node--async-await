@@ -15,3 +15,4 @@ const getTronaldDumpQuote = async () => {
   }
 };
 getTronaldDumpQuote().then((data) => console.log(data));
+module.exports = { getTronaldDumpQuote };
